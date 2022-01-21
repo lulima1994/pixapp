@@ -14,6 +14,4 @@ public class Banco {
     private String nome;
     @Column(nullable = false)
     private Integer codigo;
-    @OneToMany(mappedBy = "banco")
-    private ContaCorrente contaCorrente;
 }

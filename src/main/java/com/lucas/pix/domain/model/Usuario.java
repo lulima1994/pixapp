@@ -3,6 +3,7 @@ package com.lucas.pix.domain.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -17,5 +18,5 @@ public class Usuario {
     @Column(nullable = false, length = 180)
     private String senha;
     @OneToMany(mappedBy = "usuario")
-    private ContaCorrente contaCorrente;
+    private List<ContaCorrente> contaCorrente;
 }
