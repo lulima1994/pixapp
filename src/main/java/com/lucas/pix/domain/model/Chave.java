@@ -3,7 +3,6 @@ package com.lucas.pix.domain.model;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 
 @Data
 @Entity
@@ -11,8 +10,8 @@ public class Chave {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false)
-    private BigDecimal valor;
+    @Column(nullable = false, length = 90)
+    private String valor;
     @ManyToOne
     @JoinColumn(name = "conta_corrente_id")
     private ContaCorrente contaCorrente;

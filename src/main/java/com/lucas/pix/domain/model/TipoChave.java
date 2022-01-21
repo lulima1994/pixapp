@@ -12,6 +12,4 @@ public class TipoChave {
     private Long id;
     @Column(nullable = false, length = 45)
     private String nome;
-    @OneToMany(mappedBy = "tipoChave")
-    private Chave chave;
 }

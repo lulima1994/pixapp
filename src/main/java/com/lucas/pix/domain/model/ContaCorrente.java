@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.List;
 
 @Data
 @Entity
@@ -24,7 +25,7 @@ public class ContaCorrente {
     @JoinColumn(name = "banco_id")
     private Banco banco;
     @OneToMany(mappedBy = "contaCorrente")
-    private Chave chave;
+    private List<Chave> chave;
     @OneToMany(mappedBy = "contaCorrente")
-    private Transacao transacao;
+    private List<Transacao> transacao;
 }

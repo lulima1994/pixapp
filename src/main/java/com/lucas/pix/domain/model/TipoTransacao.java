@@ -12,6 +12,4 @@ public class TipoTransacao {
     private Long id;
     @Column(nullable = false, length = 45)
     private String nome;
-    @OneToMany(mappedBy = "tipoTransacao")
-    private Transacao transacao;
 }
