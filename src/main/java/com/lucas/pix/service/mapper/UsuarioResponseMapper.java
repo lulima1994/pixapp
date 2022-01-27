@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class UsuarioResponseMapper {
-
     public UsuarioResponse mapear(Usuario usuario) {
         UsuarioResponse usuarioResponse = new UsuarioResponse();
         usuarioResponse.setId(usuario.getId());
