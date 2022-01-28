@@ -7,6 +7,8 @@ import com.lucas.pix.dto.user.UsuarioResponse;
 import com.lucas.pix.service.mapper.UsuarioMapper;
 import com.lucas.pix.service.mapper.UsuarioResponseMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -32,5 +34,15 @@ public class UsuarioService {
             throw new RuntimeException("usuario " + id + " nao encontrado");
         UsuarioResponse usuarioResponse = usuarioResponseMapper.mapear(usuarioOptional.get());
         return usuarioResponse;
+    }
+
+    public Page<UsuarioResponse> buscarPorPagina(Pageable pageable) {
+        Page<Usuario> usuarios = usuarioRepository.findAll(pageable);
+        Page<UsuarioResponse> responses = usuarios.map((cada) -> usuarioResponseMapper.mapear(cada));
+        return responses;
+    }
+
+    public void deletarPorId(Long id) {
+        usuarioRepository.deleteById(id);
     }
 }
