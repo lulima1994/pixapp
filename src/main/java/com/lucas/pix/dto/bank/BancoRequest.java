@@ -1,4 +1,4 @@
-package com.lucas.pix.dto.user;
+package com.lucas.pix.dto.bank;
 
 import lombok.Builder;
 import lombok.Data;

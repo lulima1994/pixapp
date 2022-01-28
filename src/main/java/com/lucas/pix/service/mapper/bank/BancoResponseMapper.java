@@ -1,7 +1,7 @@
-package com.lucas.pix.service.mapper;
+package com.lucas.pix.service.mapper.bank;
 
 import com.lucas.pix.domain.model.Banco;
-import com.lucas.pix.dto.user.BancoResponse;
+import com.lucas.pix.dto.bank.BancoResponse;
 import org.springframework.stereotype.Component;
 
 @Component

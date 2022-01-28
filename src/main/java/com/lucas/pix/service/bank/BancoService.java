@@ -1,11 +1,11 @@
-package com.lucas.pix.service.user;
+package com.lucas.pix.service.bank;
 
 import com.lucas.pix.domain.model.Banco;
 import com.lucas.pix.domain.repository.BancoRepository;
-import com.lucas.pix.dto.user.BancoRequest;
-import com.lucas.pix.dto.user.BancoResponse;
-import com.lucas.pix.service.mapper.BancoMapper;
-import com.lucas.pix.service.mapper.BancoResponseMapper;
+import com.lucas.pix.dto.bank.BancoRequest;
+import com.lucas.pix.dto.bank.BancoResponse;
+import com.lucas.pix.service.mapper.bank.BancoMapper;
+import com.lucas.pix.service.mapper.bank.BancoResponseMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

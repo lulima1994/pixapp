@@ -1,8 +1,8 @@
-package com.lucas.pix.rest.user;
+package com.lucas.pix.rest.bank;
 
-import com.lucas.pix.dto.user.BancoRequest;
-import com.lucas.pix.dto.user.BancoResponse;
-import com.lucas.pix.service.user.BancoService;
+import com.lucas.pix.dto.bank.BancoRequest;
+import com.lucas.pix.dto.bank.BancoResponse;
+import com.lucas.pix.service.bank.BancoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

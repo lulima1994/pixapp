@@ -1,4 +1,4 @@
-package com.lucas.pix.service.mapper;
+package com.lucas.pix.service.mapper.user;
 
 import com.lucas.pix.domain.model.Usuario;
 import com.lucas.pix.dto.user.UsuarioResponse;
