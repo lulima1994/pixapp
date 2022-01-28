@@ -4,12 +4,11 @@ import com.lucas.pix.dto.bank.BancoRequest;
 import com.lucas.pix.dto.bank.BancoResponse;
 import com.lucas.pix.service.bank.BancoService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
@@ -35,5 +34,25 @@ public class BancoController {
         BancoResponse bancoResponse = bancoService.salvar(bancoRequest);
         return ResponseEntity.status(HttpStatus.OK)
                 .body(bancoResponse);
+    }
+
+    @GetMapping("/banco/{id}")
+    public ResponseEntity<BancoResponse> buscarPorId(@PathVariable Long id) {
+        BancoResponse bancoResponse = bancoService.buscarPorId(id);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(bancoResponse);
+    }
+
+    @GetMapping("/banco")
+    public ResponseEntity<Page<BancoResponse>> buscarPorPagina(Pageable pageable) {
+        Page<BancoResponse> responses = bancoService.buscarPorPagina(pageable);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(responses);
+    }
+
+    @DeleteMapping("/banco/{id}")
+    public ResponseEntity<Void> deletarPorId(@PathVariable Long id) {
+        bancoService.deletarPorId(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }

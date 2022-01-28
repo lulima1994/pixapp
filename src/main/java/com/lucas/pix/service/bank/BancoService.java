@@ -7,6 +7,8 @@ import com.lucas.pix.dto.bank.BancoResponse;
 import com.lucas.pix.service.mapper.bank.BancoMapper;
 import com.lucas.pix.service.mapper.bank.BancoResponseMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -21,15 +23,22 @@ public class BancoService {
     public BancoResponse salvar(BancoRequest bancoRequest) {
         Banco banco = bancoMapper.mapear(bancoRequest);
         bancoRepository.save(banco);
-        BancoResponse bancoResponse = bancoResponseMapper.mapear(banco);
-        return bancoResponse;
+        return bancoResponseMapper.mapear(banco);
     }
 
     public BancoResponse buscarPorId(Long id) {
         Optional<Banco> bancoOptional = bancoRepository.findById(id);
         if (bancoOptional.isEmpty())
             throw new RuntimeException("banco " + id + " nao encontrado");
-        BancoResponse bancoResponse = bancoResponseMapper.mapear(bancoOptional.get());
-        return bancoResponse;
+        return bancoResponseMapper.mapear(bancoOptional.get());
+    }
+
+    public Page<BancoResponse> buscarPorPagina(Pageable pageable) {
+        Page<Banco> bancos = bancoRepository.findAll(pageable);
+        return bancos.map((cada) -> bancoResponseMapper.mapear(cada));
+    }
+
+    public void deletarPorId(Long id) {
+        bancoRepository.deleteById(id);
     }
 }
