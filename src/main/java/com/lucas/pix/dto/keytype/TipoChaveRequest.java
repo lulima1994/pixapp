@@ -1,12 +1,11 @@
-package com.lucas.pix.dto.bank;
+package com.lucas.pix.dto.keytype;
 
 import lombok.Builder;
 import lombok.Data;
 
 @Builder
 @Data
-public class BancoRequest {
+public class TipoChaveRequest {
     private Long id;
     private String nome;
-    private String codigo;
 }

@@ -6,8 +6,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ContaCorrenteResponseMapper {
-    public ContaCorrenteResponse mapear(ContaCorrente contaCorrente){
+    public ContaCorrenteResponse mapear(ContaCorrente contaCorrente) {
         ContaCorrenteResponse contaCorrenteResponse = new ContaCorrenteResponse();
+        contaCorrenteResponse.setNomeUsuario(contaCorrente.getUsuario().getNome());
+        contaCorrenteResponse.setNomeBanco(contaCorrente.getBanco().getNome());
         contaCorrenteResponse.setId(contaCorrente.getId());
         contaCorrenteResponse.setAgencia(contaCorrente.getAgencia());
         contaCorrenteResponse.setConta(contaCorrente.getConta());

@@ -13,6 +13,8 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 public class ContaCorrenteResponse {
     private Long id;
+    private String nomeBanco;
+    private String nomeUsuario;
     private Integer agencia;
     private Integer conta;
     private BigDecimal saldo;
