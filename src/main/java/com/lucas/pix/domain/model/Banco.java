@@ -13,5 +13,5 @@ public class Banco {
     @Column(nullable = false, length = 45)
     private String nome;
     @Column(nullable = false)
-    private Integer codigo;
+    private String codigo;
 }

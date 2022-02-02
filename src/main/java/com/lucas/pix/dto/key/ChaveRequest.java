@@ -7,7 +7,9 @@ import lombok.Data;
 @Data
 public class ChaveRequest {
     private Long id;
-    private Long contaCorrenteId;
+    private Integer agencia;
+    private Integer conta;
+    private String codigo;
     private String tipo;
     private String valor;
 }

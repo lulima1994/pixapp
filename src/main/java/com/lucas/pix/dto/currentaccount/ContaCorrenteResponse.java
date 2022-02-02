@@ -1,5 +1,7 @@
 package com.lucas.pix.dto.currentaccount;
 
+import com.lucas.pix.dto.bank.BancoResponse;
+import com.lucas.pix.dto.user.UsuarioResponse;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,9 +14,9 @@ import java.math.BigDecimal;
 @Data
 @NoArgsConstructor
 public class ContaCorrenteResponse {
+    private UsuarioResponse usuario;
+    private BancoResponse banco;
     private Long id;
-    private String nomeBanco;
-    private String nomeUsuario;
     private Integer agencia;
     private Integer conta;
     private BigDecimal saldo;

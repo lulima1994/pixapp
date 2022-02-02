@@ -16,7 +16,9 @@ public class ChaveMapper {
 
     public Chave mapear(ChaveRequest chaveRequest) {
         Chave chave = new Chave();
-        chave.setContaCorrente(contaCorrenteRepository.findById(chaveRequest.getContaCorrenteId()).orElseThrow());
+        chave.setContaCorrente(contaCorrenteRepository
+                .findByAccount(chaveRequest.getAgencia(), chaveRequest.getConta(), chaveRequest.getCodigo())
+                .orElseThrow());
         chave.setTipoChave(tipoChaveRepository.findByName(chaveRequest.getTipo()).orElseThrow());
         chave.setId(chaveRequest.getId());
         chave.setValor(chaveRequest.getValor());

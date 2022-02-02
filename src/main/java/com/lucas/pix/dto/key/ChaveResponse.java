@@ -1,5 +1,6 @@
 package com.lucas.pix.dto.key;
 
+import com.lucas.pix.dto.currentaccount.ContaCorrenteResponse;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,8 +11,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class ChaveResponse {
+    private ContaCorrenteResponse contaCorrente;
     private Long id;
-    private String nomeContaCorrente;
-    private String nomeTipoChave;
+    private String tipo;
     private String valor;
 }

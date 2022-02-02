@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 @Data
 public class ContaCorrenteRequest {
     private Long id;
-    private Long bancoId;
+    private String codigo;
     private Long usuarioId;
     private Integer agencia;
     private Integer conta;

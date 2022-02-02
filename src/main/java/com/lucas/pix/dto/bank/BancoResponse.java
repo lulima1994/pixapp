@@ -12,5 +12,5 @@ import lombok.NoArgsConstructor;
 public class BancoResponse {
     private Long id;
     private String nome;
-    private Integer codigo;
+    private String codigo;
 }

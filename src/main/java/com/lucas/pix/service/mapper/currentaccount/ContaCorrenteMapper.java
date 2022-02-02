@@ -17,7 +17,7 @@ public class ContaCorrenteMapper {
     public ContaCorrente mapear(ContaCorrenteRequest contaCorrenteRequest) {
         ContaCorrente contaCorrente = new ContaCorrente();
         contaCorrente.setUsuario(usuarioRepository.findById(contaCorrenteRequest.getUsuarioId()).orElseThrow());
-        contaCorrente.setBanco(bancoRepository.findById(contaCorrenteRequest.getBancoId()).orElseThrow());
+        contaCorrente.setBanco(bancoRepository.findByCode(contaCorrenteRequest.getCodigo()).orElseThrow());
         contaCorrente.setId(contaCorrenteRequest.getId());
         contaCorrente.setAgencia(contaCorrenteRequest.getAgencia());
         contaCorrente.setConta(contaCorrenteRequest.getConta());

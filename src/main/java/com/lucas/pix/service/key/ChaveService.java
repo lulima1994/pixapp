@@ -1,10 +1,7 @@
 package com.lucas.pix.service.key;
 
 import com.lucas.pix.domain.model.Chave;
-import com.lucas.pix.domain.model.ContaCorrente;
 import com.lucas.pix.domain.repository.ChaveRepository;
-import com.lucas.pix.dto.currentaccount.ContaCorrenteRequest;
-import com.lucas.pix.dto.currentaccount.ContaCorrenteResponse;
 import com.lucas.pix.dto.key.ChaveRequest;
 import com.lucas.pix.dto.key.ChaveResponse;
 import com.lucas.pix.service.mapper.key.ChaveMapper;
